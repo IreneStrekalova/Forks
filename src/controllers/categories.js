@@ -5,8 +5,12 @@ module.exports = {
         return await Category.query().page(page, perPage);
     },
 
-    async getCategory(id) {
-        return await Category.query().where({id: id});
+    async getCategory(id, related) {
+        let query = Category.query().where({id: id});
+        if (related) {
+            query = query.withGraphFetched(related);
+        }
+        return await query;
     },
 
     async createCategory(query) {

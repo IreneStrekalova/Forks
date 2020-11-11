@@ -1,6 +1,4 @@
 const Model = require('../db/dbConnection');
-const User = require('./User');
-const Category = require('./Category');
 
 module.exports = class Fork extends Model {
     static get tableName() {
@@ -8,6 +6,8 @@ module.exports = class Fork extends Model {
     }
 
     static get relationMappings() {
+        const User = require('./User');
+        const Category = require('./Category');
         return {
             user: {
                 modelClass: User,

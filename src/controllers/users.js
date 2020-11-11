@@ -82,6 +82,18 @@ module.exports = {
     },
 
     async updateUser(id, query) {
+        let isUser = await User.query().findOne({ id: id });
+        if (!isUser) {
+            throw ({ status: 404, message: 'user not exist' });
+        }
+        const passwResult = bcrypt.compareSync(query.oldPassword.trim(), isUser.password);
+        if (!passwResult) {
+            throw ({ status: 404, message: 'old password wrong' });
+        }
+        delete query.oldPassword;
+        const salt = bcrypt.genSaltSync(10);
+        query.password = bcrypt.hashSync(query.password.trim(), salt);
+
         return await User.query().patchAndFetchById(id, query);
     },
 

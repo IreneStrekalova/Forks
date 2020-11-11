@@ -23,7 +23,8 @@ router.route('/:id')
     .get(authenticate, async(req, res, next) => {
         try {
             if(!isNaN(req.params.id)) {
-                const result = await Controller.getCategory(req.params.id);
+                const related = (req.query.related) ? req.query.related : 0;
+                const result = await Controller.getCategory(req.params.id, related);
                 res.status(200).send(result);
             } else {
                 throw ({ status: 404, message: 'invalid Id' })

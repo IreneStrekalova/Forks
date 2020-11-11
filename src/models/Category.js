@@ -1,5 +1,4 @@
 const Model = require('../db/dbConnection');
-const Fork = require('./Fork');
 
 module.exports = class Category extends Model {
     static get tableName() {
@@ -7,6 +6,9 @@ module.exports = class Category extends Model {
     }
 
     static get relationMappings() {
+        const Fork = require('./Fork');
+        const User = require('./User');
+
         return {
             forks: {
                 modelClass: Fork,
@@ -18,6 +20,18 @@ module.exports = class Category extends Model {
                         to: 'categoriesForks.forkId'
                     },
                     to: 'forks.id'
+                }
+            },
+            users: {
+                modelClass: User,
+                relation: Model.ManyToManyRelation,
+                join: {
+                    from: 'categories.id',
+                    through: {
+                        from: 'usersCategories.categoryId',
+                        to: 'usersCategories.userId'
+                    },
+                    to: 'users.id'
                 }
             }
         }

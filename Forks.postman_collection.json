@@ -1,0 +1,775 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Forks",
+		"_postman_id": "6391f44a-e973-1e45-b455-2c3fe2e8b3b5",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"description": "",
+			"item": [
+				{
+					"name": "SIGNUP",
+					"request": {
+						"url": "http://localhost:3000/auth/signup",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"login\": \"Illusion\",\n\t\"password\": \"123\",\n\t\"email\": \"wings.of.fairys@gmail.com\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SIGNIN",
+					"request": {
+						"url": "http://localhost:3000/auth/signin",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"login\": \"Irene\",\n\t\"password\": \"lName\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "RefreshToken",
+					"request": {
+						"url": "http://localhost:3000/auth/refreshToken",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDQ0OTI5NTR9.CK3aVkxH64C91cN_iYyccxeXXjThjFjo7xEGRcNp23I\"\n}\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Forks",
+			"description": "",
+			"item": [
+				{
+					"name": "GET All Forks with pagination",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3000/forks?page=0&perPage=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"forks"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "perPage",
+									"value": "8",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET Fork BY ID",
+					"request": {
+						"url": "http://localhost:3000/forks/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create Fork",
+					"request": {
+						"url": "http://localhost:3000/forks",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"fork\",\n    \"description\": \"\",\n    \"creatingYear\": 1920,\n    \"userId\": 2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Fork",
+					"request": {
+						"url": "http://localhost:3000/forks/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"forky\",\n    \"description\": \"such pretty\",\n    \"creatingYear\": 1920,\n    \"userId\": 2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Fork",
+					"request": {
+						"url": "http://localhost:3000/forks/6",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"fork\",\n    \"description\": \"\",\n    \"creatingYear\": 1920,\n    \"userId\": 2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"description": "",
+			"item": [
+				{
+					"name": "GET all Categories with pagination",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3000/categories?page=0&perPage=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Forks From Category BY ID",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3000/categories/3?related=forks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"3"
+							],
+							"query": [
+								{
+									"key": "related",
+									"value": "forks",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE Category",
+					"request": {
+						"url": "http://localhost:3000/categories",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"silver\",\n    \"description\": \"\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"url": "http://localhost:3000/categories/5",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"oliver\",\n    \"description\": \"\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Category",
+					"request": {
+						"url": "http://localhost:3000/categories/3",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"silver\",\n    \"description\": \"\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Relation Category + Fork",
+			"description": "",
+			"item": [
+				{
+					"name": "GET relation categoriesForks",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3000/categoryFork?page=0&perPage=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categoryFork"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "perPage",
+									"value": "8",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryId\": 1,\n    \"forkId\": 2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET relation categoriesForks BY ID",
+					"request": {
+						"url": "http://localhost:3000/categoryFork/8",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryId\": 1,\n    \"forkId\": 2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE relation category + fork",
+					"request": {
+						"url": "http://localhost:3000/categoryFork",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryId\": 1,\n    \"forkId\": 2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE relation categoryFork",
+					"request": {
+						"url": "http://localhost:3000/categoryFork/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryId\": 3,\n    \"forkId\": 3\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE relation categoryFork",
+					"request": {
+						"url": "http://localhost:3000/categoryFork/14",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryId\": 3,\n    \"forkId\": 3\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"description": "",
+			"item": [
+				{
+					"name": "GET user and all forks created by User",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3000/users/2?related=forks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"2"
+							],
+							"query": [
+								{
+									"key": "related",
+									"value": "forks",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET Users",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3000/users?page=1&perPage=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE User",
+					"request": {
+						"url": "http://localhost:3000/users/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"login\": \"Irene\",\n   \"oldPassword\": \"myPass\",\n\t\"password\": \"kykys\",\n\t\"email\": \"strekalovairene@gmail.com\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscription",
+			"description": "",
+			"item": [
+				{
+					"name": "Subscribe to category  (CREATE relation userCategories)",
+					"request": {
+						"url": "http://localhost:3000/userCategory",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryId\": 1,\n    \"userId\": 5\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET relations  user +Categories",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3000/userCategory?page=0&perPage=6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userCategory"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "perPage",
+									"value": "6",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryId\": 1,\n    \"forkId\": 2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET relation userCategories BY ID",
+					"request": {
+						"url": "http://localhost:3000/userCategory/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryId\": 1,\n    \"forkId\": 2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE relation userCategories",
+					"request": {
+						"url": "http://localhost:3000/userCategory/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryId\": 2,\n    \"userId\": 2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE relation userCategories",
+					"request": {
+						"url": "http://localhost:3000/userCategory/6",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJJcmVuZSIsInBhc3N3b3JkIjoiJDJhJDEwJFF3WGhDUmx3UHZiT2t1Ym5OVnR4V3VZU0toTS9oNWxLT2hmWkJUdUxWc0kvMXVXSVR4OEppIiwiZW1haWwiOiJzdHJla2Fsb3ZhaXJlbmVAZ21haWwuY29tIiwiaWF0IjoxNjAzODg4MTU0LCJleHAiOjE2MDM5NzQ1NTR9.Hx-DmIbsrL-kC_Rb8YGGtHKg_qtzbDZt_XyI-ZwsHuI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryId\": 1,\n    \"forkId\": 2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -3,8 +3,9 @@ exports.seed = async function(knex) {
   await knex('users').del()
     .then(function () {
       return knex('users').insert([
-        {id: 1, login: 'Diana', email: 'diana@gmail.com'},
-        {id: 2, login: 'Tylel', email: 't@mail.com'}
+        {id: 1, login: 'Irene', password: "$2a$10$QwXhCRlwPvbOkubnNVtxWuYSKhM/h5lKOhfZBTuLVsI/1uWITx8Ji", email: 'strekalovairene@gmail.com'},
+        {id: 2, login: 'Diana', password: "$2a$10$QwXhCRlwPvbOkubnNVtxWuYSKhM/h5lKOhfZBTuLVsI/1uWITx8Ji", email: 'diana@gmail.com'},
+        {id: 3, login: 'Tylel', password: "$2a$10$QwXhCRlwPvbOkubnNVtxWuYSKhM/h5lKOhfZBTuLVsI/1uWITx8Ji", email: 't@mail.com'}
       ]);
     });
     await knex('forks').del()
@@ -27,12 +28,8 @@ exports.seed = async function(knex) {
     .then(function () {
       return knex('categoriesForks').insert([
         {categoryId: 3, forkId: 2 },
-        {categoryId: 3, forkId: 1 },
-        {categoryId: 2, forkId: 3 },
         {categoryId: 3, forkId: 3 },
         {categoryId: 2, forkId: 2 },
-        {categoryId: 1, forkId: 2 },
-        {categoryId: 1, forkId: 1 },
         {categoryId: 1, forkId: 3 }
       ]);
     });
